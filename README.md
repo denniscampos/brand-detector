@@ -1,6 +1,9 @@
 # Detect your favorite brand!
 
 Upload a picture with a brand to see if the app will detect it! 😀
+Check out the gif below to see it in action!
+
+![brand-detector] (https://media.giphy.com/media/k3LBVzX8gk0K0SrYkg/giphy.gif?cid=790b76113fe081f627341ac79c5a33fc1361956c5ee0b333&rid=giphy.gif&ct=g)
 
 # Install
 
@@ -8,7 +11,7 @@ Upload a picture with a brand to see if the app will detect it! 😀
 
 ---
 
-# Things to add
+# Want to run it on your own? Add the following:
 
 - Create a config folder with a `.env` file and add the following as `key = value`
   - PORT = 2121 (can be any port example: 3000)
