@@ -3,7 +3,7 @@
 Upload a picture with a brand to see if the app will detect it! 😀
 Check out the gif below to see it in action!
 
-![brand-detector] (https://media.giphy.com/media/k3LBVzX8gk0K0SrYkg/giphy.gif?cid=790b76113fe081f627341ac79c5a33fc1361956c5ee0b333&rid=giphy.gif&ct=g)
+![brand-detector](https://media.giphy.com/media/k3LBVzX8gk0K0SrYkg/giphy.gif?cid=790b76113fe081f627341ac79c5a33fc1361956c5ee0b333&rid=giphy.gif&ct=g)
 
 # Install
 
