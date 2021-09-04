@@ -14,13 +14,13 @@ const upload = multer({
 });
 
 //MS Specific
-const axios = require("axios").default;
-const async = require("async");
-const fs = require("fs");
-const https = require("https");
+// const axios = require("axios").default;
+// const async = require("async");
+// const fs = require("fs");
+// const https = require("https");
 const path = require("path");
-const createReadStream = require("fs").createReadStream;
-const sleep = require("util").promisify(setTimeout);
+// const createReadStream = require("fs").createReadStream;
+// const sleep = require("util").promisify(setTimeout);
 const ComputerVisionClient =
   require("@azure/cognitiveservices-computervision").ComputerVisionClient;
 const ApiKeyCredentials = require("@azure/ms-rest-js").ApiKeyCredentials;
@@ -71,6 +71,7 @@ app.post("/", upload.single("file-to-upload"), async (req, res) => {
 
     // Analyze URL image
     console.log("Analyzing brands in image...", brandURLImage.split("/").pop());
+
     const brands = (
       await computerVisionClient.analyzeImage(brandURLImage, {
         visualFeatures: ["Brands"],
@@ -92,7 +93,10 @@ app.post("/", upload.single("file-to-upload"), async (req, res) => {
     }
     // </snippet_brands>
     console.log();
-    res.render("result.ejs", { brands: brands, img: brandURLImage });
+    res.render("result.ejs", {
+      brands: brands,
+      img: brandURLImage,
+    });
   } catch (err) {
     console.log(err);
   }
