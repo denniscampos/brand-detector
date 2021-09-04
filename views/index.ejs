@@ -7,12 +7,72 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1">Please upload an image below:</h1>
+    <div class="container flex flex-col items-center justify-center">
+      <h1 class="text-5xl font-bold my-5 text-center">Brand Detector 🔥</h1>
+      <h2 class="text-4xl font-bold my-5 text-indigo-500">How it works:</h2>
+      <p class="text-3xl my-5 text-center">
+        Upload a picture with a brand or logo and let the application create its
+        magic! 😛
+      </p>
+      <p class="text-2xl italic text-center">
+        Too lazy to find images?
+        <a
+          class="text-red-600 font-bold italic"
+          href="https://duckduckgo.com/?q=famous+logos&t=hx&va=g&iar=images&iaf=type%3Atransparent%2Csize%3AMedium&iax=images&ia=images"
+          target="_blank"
+          >Click here!</a
+        >
+      </p>
+      <h3 class="text-center text-3xl my-5">Please upload an image below:</h3>
       <form action="/" enctype="multipart/form-data" method="post">
-        <input type="file" name="file-to-upload" />
-        <input type="submit" value="Upload" />
+        <input
+          id="test"
+          type="file"
+          accept="image/*"
+          onchange="loadFile(event)"
+          name="file-to-upload"
+        />
+        <img class="h-auto w-auto" id="output" />
+        <input
+          id="img-input"
+          class="
+            bg-indigo-500
+            text-white
+            font-bold
+            my-5
+            py-2
+            px-4
+            rounded-sm
+            cursor-pointer
+          "
+          type="submit"
+          value="Upload"
+        />
+        <input
+          type="reset"
+          class="uppercase underline px-4 py-2 my-5 cursor-pointer bg-white"
+          id="clear"
+          class="clear"
+          value="clear"
+        />
       </form>
+      <!-- to display image file on page -->
+      <script>
+        const loadFile = (event) => {
+          const output = document.getElementById("output");
+          output.src = URL.createObjectURL(event.target.files[0]);
+          output.onload = () => {
+            URL.revokeObjectURL(output.src); // free memory
+          };
+        };
+
+        //clear image input
+        const clearForm = document.getElementById("clear");
+        const clearImage = document.getElementById("output");
+        clearForm.addEventListener("click", () => {
+          clearImage.src = "";
+        });
+      </script>
     </div>
   </body>
 </html>
